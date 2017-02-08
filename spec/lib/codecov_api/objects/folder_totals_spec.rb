@@ -1,8 +1,8 @@
 require 'spec_helper'
-require_relative '../../../../lib/codecov/objects/folder_totals.rb'
+require_relative '../../../../lib/codecov_api/objects/folder_totals.rb'
 
-RSpec.describe Codecov::Objects::FolderTotals do
-  subject { Codecov::Objects::FolderTotals.new('{
+RSpec.describe CodecovApi::Objects::FolderTotals do
+  subject { CodecovApi::Objects::FolderTotals.new('{
   "commit": {
     "folder_totals": {
       "files": 324,
