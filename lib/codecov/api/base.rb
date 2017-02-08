@@ -6,10 +6,15 @@ module Codecov
     class Base
 
     protected
-    def get_request(url)
-      puts base_url + url
-      get_response(url)
-    end
+    
+      def get_request(path)
+        puts base_url + base_path + path
+        get_response(base_url + base_path + path)
+      end
+
+      def base_path
+        raise 'base_path method not defined'
+      end
 
     private
       def auth_token
@@ -24,7 +29,7 @@ module Codecov
       def get_response(url)
         RestClient::Request.new(
           method: :get,
-          url: base_url + url,
+          url: url,
           headers: { :Authorization => 'token ' + auth_token }
         ).execute
       end

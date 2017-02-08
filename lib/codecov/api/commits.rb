@@ -14,14 +14,15 @@ module Codecov
       end
 
       def get(sha)
-        get_request(base_path + "/commit/#{sha}")
+        get_request("/commit/#{sha}")
       end
 
       def folder_totals(path, branch = 'master')
-        get_request(base_path + "/tree/#{branch}/#{path}")
+        get_request("/tree/#{branch}/#{path}")
       end
 
-    private
+    protected
+    
       def base_path
         "/#{@owner}/#{@repo}"
       end
