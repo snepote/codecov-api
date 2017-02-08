@@ -1,7 +1,7 @@
 require_relative 'base.rb'
 
 module Codecov
-  module Model
+  module Objects
     class FolderTotals < Base
       protected
 
@@ -15,8 +15,3 @@ module Codecov
     end
   end
 end
-
-require_relative '../api/folder_totals.rb'
-
-folder_api = Codecov::Api::FolderTotals.new('hvssle', 'hassle')
-puts Codecov::Model::FolderTotals.new(folder_api.get('app/controllers')).coverage

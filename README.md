@@ -2,7 +2,7 @@
 API tool to get access to CodeCov's statistics
 
 ## Usage
-CODECOV_AUTH_TOKEN={CODECOV_AUTH_TOKEN} ruby lib/codecov/api/{stat_type}.rb
+CODECOV_AUTH_TOKEN={CODECOV_AUTH_TOKEN} ruby main.rb
 
 ## CodeCov API reference
 [Usage](https://docs.codecov.io/reference#usage)

@@ -1,7 +1,7 @@
 require_relative 'base.rb'
 
 module Codecov
-  module Model
+  module Objects
     class Author < Base
       protected
 

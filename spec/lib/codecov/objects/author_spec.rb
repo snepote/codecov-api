@@ -1,8 +1,8 @@
 require 'spec_helper'
-require_relative '../../../../lib/codecov/model/author.rb'
+require_relative '../../../../lib/codecov/objects/author.rb'
 
-RSpec.describe Codecov::Model::Author do
-  subject { Codecov::Model::Author.new('{
+RSpec.describe Codecov::Objects::Author do
+  subject { Codecov::Objects::Author.new('{
     "author": {
       "service": "github",
       "name": "Gafsi",

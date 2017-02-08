@@ -1,7 +1,7 @@
 require 'json'
 
 module Codecov
-  module Model
+  module Objects
     class Base
       def initialize(json)
         @data = JSON.parse(json.to_s)
