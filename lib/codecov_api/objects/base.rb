@@ -1,6 +1,6 @@
 require 'json'
 
-module Codecov
+module CodecovApi
   module Objects
     class Base
       def initialize(json)

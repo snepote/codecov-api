@@ -1,6 +1,6 @@
 require_relative 'base.rb'
 
-module Codecov
+module CodecovApi
   module Api
     class Branches < Base
       def initialize(owner, repo)

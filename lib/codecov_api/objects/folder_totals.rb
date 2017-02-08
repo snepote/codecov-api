@@ -1,16 +1,16 @@
 require_relative 'base.rb'
 
-module Codecov
+module CodecovApi
   module Objects
-    class Author < Base
+    class FolderTotals < Base
       protected
 
       def valid_methods
-        [:service, :name, :email, :username, :service_id]
+        [:files, :lines, :hits, :misses, :coverage]
       end
 
       def root_element
-        @data['author']
+        @data['commit']['folder_totals']
       end
     end
   end
