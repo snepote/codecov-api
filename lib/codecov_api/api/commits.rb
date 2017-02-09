@@ -10,7 +10,7 @@ module CodecovApi
 
       def list(from = nil, to = nil)
         # todo: add from and to parameters
-        get_request(base_path + '/commits')
+        get_request('/commits')
       end
 
       def get(sha)

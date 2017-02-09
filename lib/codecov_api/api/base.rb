@@ -26,6 +26,7 @@ module CodecovApi
       end
 
       def get_response(url)
+        puts "GET #{url}"
         RestClient::Request.new(
           method: :get,
           url: url,
