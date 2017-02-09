@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'codecov_api'
-  s.version     = '0.0.1'
+  s.version     = '0.0.0'
   s.date        = '2017-02-08'
   s.summary     = "Codecov API"
   s.description = "Unofficial toolset to consume CodeCov's API"
