@@ -1,6 +1,8 @@
 # codecov_api
 Unofficial toolset to consume CodeCov's API
 
+[![Build Status](https://travis-ci.org/snepote/codecov_api.svg?branch=master)](https://travis-ci.org/snepote/codecov_api)
+
 ## Usage
 ```bash
 export CODECOV_AUTH_TOKEN={CODECOV_AUTH_TOKEN}
