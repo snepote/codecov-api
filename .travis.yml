@@ -1,0 +1,12 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.2.6
+
+notifications:
+  email: "snepote@gmail.com"
+
+# safelist
+branches:
+  only:
+  - master

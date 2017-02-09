@@ -1,6 +1,6 @@
 require_relative 'base.rb'
 
-module Codecov
+module CodecovApi
   module Api
     class Commits < Base
       def initialize(owner, repo)
@@ -10,7 +10,7 @@ module Codecov
 
       def list(from = nil, to = nil)
         # todo: add from and to parameters
-        get_request(base_path + '/commits')
+        get_request('/commits')
       end
 
       def get(sha)
@@ -22,7 +22,7 @@ module Codecov
       end
 
     protected
-    
+
       def base_path
         "/#{@owner}/#{@repo}"
       end
