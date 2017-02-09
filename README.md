@@ -1,7 +1,7 @@
 # codecov_api
 Unofficial toolset to consume CodeCov's API
 
-[![Build Status](https://travis-ci.org/snepote/codecov_api.svg?branch=master)](https://travis-ci.org/snepote/codecov_api)
+[![Build Status](https://travis-ci.org/snepote/codecov_api.svg?branch=master)](https://travis-ci.org/snepote/codecov_api) [![Gem Version](https://badge.fury.io/rb/codecov_api.svg)](https://badge.fury.io/rb/codecov_api)
 
 ## Usage
 ```bash
