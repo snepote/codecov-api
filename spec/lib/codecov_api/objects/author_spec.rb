@@ -2,15 +2,16 @@ require 'spec_helper'
 require_relative '../../../../lib/codecov_api/objects/author.rb'
 
 RSpec.describe CodecovApi::Objects::Author do
-  subject { CodecovApi::Objects::Author.new('{
-    "author": {
-      "service": "github",
-      "name": "Gafsi",
-      "email": "hello@codecov.io",
-      "username": "codecov",
-      "service_id": "12345"
-    }
-  }') }
+  subject do CodecovApi::Objects::Author.new('{
+      "author": {
+        "service": "github",
+        "name": "Gafsi",
+        "email": "hello@codecov.io",
+        "username": "codecov",
+        "service_id": "12345"
+      }
+    }')
+  end
 
   it "should have a service" do
     expect(subject.service).to eq('github')

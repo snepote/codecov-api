@@ -2,25 +2,26 @@ require 'spec_helper'
 require_relative '../../../../lib/codecov_api/objects/folder_totals.rb'
 
 RSpec.describe CodecovApi::Objects::FolderTotals do
-  subject { CodecovApi::Objects::FolderTotals.new('{
-  "commit": {
-    "folder_totals": {
-      "files": 324,
-      "lines": 10274,
-      "hits": 4988,
-      "misses": 5286,
-      "partials": 0,
-      "coverage": "48.54974",
-      "branches": 0,
-      "methods": 0,
-      "messages": 0,
-      "sessions": 0,
-      "complexity": 0,
-      "complexity_total": 0,
-      "diff": 0
-    }
-  }
-}') }
+  subject do CodecovApi::Objects::FolderTotals.new('{
+      "commit": {
+        "folder_totals": {
+          "files": 324,
+          "lines": 10274,
+          "hits": 4988,
+          "misses": 5286,
+          "partials": 0,
+          "coverage": "48.54974",
+          "branches": 0,
+          "methods": 0,
+          "messages": 0,
+          "sessions": 0,
+          "complexity": 0,
+          "complexity_total": 0,
+          "diff": 0
+        }
+      }
+    }')
+  end
 
   it "should have a files" do
     expect(subject.files).to eq(324)
