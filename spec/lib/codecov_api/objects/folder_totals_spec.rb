@@ -23,23 +23,23 @@ RSpec.describe CodecovApi::Objects::FolderTotals do
     }')
   end
 
-  it "should have a files" do
+  it 'should have a files' do
     expect(subject.files).to eq(324)
   end
 
-  it "should have a lines" do
+  it 'should have a lines' do
     expect(subject.lines).to eq(10274)
   end
 
-  it "should have a hits" do
+  it 'should have a hits' do
     expect(subject.hits).to eq(4988)
   end
 
-  it "should have a misses" do
+  it 'should have a misses' do
     expect(subject.misses).to eq(5286)
   end
 
-  it "should have a coverage" do
+  it 'should have a coverage' do
     expect(subject.coverage).to eq('48.54974')
   end
 end

@@ -13,23 +13,23 @@ RSpec.describe CodecovApi::Objects::Author do
     }')
   end
 
-  it "should have a service" do
+  it 'should have a service' do
     expect(subject.service).to eq('github')
   end
 
-  it "should have a name" do
+  it 'should have a name' do
     expect(subject.name).to eq('Gafsi')
   end
 
-  it "should have a email" do
+  it 'should have a email' do
     expect(subject.email).to eq('hello@codecov.io')
   end
 
-  it "should have a username" do
+  it 'should have a username' do
     expect(subject.username).to eq('codecov')
   end
 
-  it "should have a service_id" do
+  it 'should have a service_id' do
     expect(subject.service_id).to eq('12345')
   end
 end
