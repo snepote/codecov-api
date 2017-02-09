@@ -1,5 +1,5 @@
 # codecov_api
-API tool to get access to CodeCov's statistics
+Unofficial toolset to consume CodeCov's API
 
 ## Usage
 ```bash
