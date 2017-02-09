@@ -2,7 +2,8 @@ require 'spec_helper'
 require_relative '../../../../lib/codecov_api/objects/author.rb'
 
 RSpec.describe CodecovApi::Objects::Author do
-  subject do CodecovApi::Objects::Author.new('{
+  subject do
+    CodecovApi::Objects::Author.new('{
       "author": {
         "service": "github",
         "name": "Gafsi",
