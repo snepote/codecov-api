@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'spec_helper'
 require_relative '../../../../lib/codecov_api/objects/folder_totals.rb'
 
@@ -29,7 +30,7 @@ RSpec.describe CodecovApi::Objects::FolderTotals do
   end
 
   it 'should have a lines' do
-    expect(subject.lines).to eq(10274)
+    expect(subject.lines).to eq(102_74)
   end
 
   it 'should have a hits' do
@@ -37,7 +38,7 @@ RSpec.describe CodecovApi::Objects::FolderTotals do
   end
 
   it 'should have a misses' do
-    expect(subject.misses).to eq(5286)
+    expect(subject.misses).to eq(528_6)
   end
 
   it 'should have a coverage' do

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'spec_helper'
 require_relative '../../../../lib/codecov_api/objects/author.rb'
 
