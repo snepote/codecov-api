@@ -8,7 +8,6 @@ module CodecovApi
     protected
 
       def get_request(path)
-        puts base_url + base_path + path
         get_response(base_url + base_path + path)
       end
 
