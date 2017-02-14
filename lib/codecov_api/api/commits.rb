@@ -14,8 +14,8 @@ module CodecovApi
           if value.instance_of?(Time) then
             "#{key}=#{value.utc.strftime('%F %T')}"
           elsif !(value.nil?)
-           raise 'not a valid time'
-         end
+            raise 'not a valid time'
+          end
         end.compact
         uri = "#{uri}/?#{params.join('&')}" unless params.empty?
         get_request(uri)
