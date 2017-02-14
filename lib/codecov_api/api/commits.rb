@@ -16,7 +16,6 @@ module CodecovApi
           elsif !(value.nil?)
            raise 'not a valid time'
          end
-
         end.compact
         uri = "#{uri}/?#{params.join('&')}" unless params.empty?
         get_request(uri)
