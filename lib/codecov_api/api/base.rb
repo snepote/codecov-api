@@ -8,7 +8,7 @@ module CodecovApi
     protected
 
       def get_request(path)
-        get_response(base_url + base_path + path)
+        response(base_url + base_path + path)
       end
 
       def base_path
@@ -25,10 +25,10 @@ module CodecovApi
         'https://codecov.io/api/gh'
       end
 
-      def get_response(url)
-        puts "GET #{url}"
+      def response(url, method: :get)
+        puts "#{method.to_s.upcase} #{url}"
         RestClient::Request.new(
-          method: :get,
+          method: method,
           url: url,
           headers: { :Authorization => 'token ' + auth_token }
         ).execute
