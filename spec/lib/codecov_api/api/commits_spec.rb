@@ -3,17 +3,17 @@ require 'spec_helper'
 require_relative '../../../../lib/codecov_api/api/commits.rb'
 
 RSpec.describe CodecovApi::Api::Commits do
-  let(:owner) {'owner'}
-  let(:repo) {'repo'}
-  let(:base_url) {"https://codecov.io/api/gh/#{owner}/#{repo}"}
-  let(:json) {'{"param": "value"}'}
+  let(:owner) { 'owner' }
+  let(:repo) { 'repo' }
+  let(:base_url) { "https://codecov.io/api/gh/#{owner}/#{repo}" }
+  let(:json) { '{"param": "value"}' }
   subject do
     described_class.new(owner, repo)
   end
 
-  let(:sha) {'da39a3ee5e6b4b0d3255bfef95601890afd80709'}
-  let(:from) {Time.new(2016, 8, 18, 17, 32, 25)}
-  let(:to) {Time.new(2017, 1, 14, 10, 00, 00)}
+  let(:sha) { 'da39a3ee5e6b4b0d3255bfef95601890afd80709' }
+  let(:from) { Time.new(2016, 8, 18, 17, 32, 25) }
+  let(:to) { Time.new(2017, 01, 14, 10, 00, 00) }
 
   before(:example) do
     allow(ENV).to receive(:[]).with('CODECOV_AUTH_TOKEN').and_return('some_valid_auth_token')

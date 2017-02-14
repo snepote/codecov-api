@@ -3,10 +3,10 @@ require 'spec_helper'
 require_relative '../../../../lib/codecov_api/api/branches.rb'
 
 RSpec.describe CodecovApi::Api::Branches do
-  let(:owner) {'owner'}
-  let(:repo) {'repo'}
-  let(:base_url) {"https://codecov.io/api/gh/#{owner}/#{repo}"}
-  let(:json) {'{"param": "value"}'}
+  let(:owner) { 'owner' }
+  let(:repo) { 'repo' }
+  let(:base_url) { "https://codecov.io/api/gh/#{owner}/#{repo}" }
+  let(:json) { '{"param": "value"}' }
   subject do
     described_class.new(owner, repo)
   end
