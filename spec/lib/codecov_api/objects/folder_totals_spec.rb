@@ -38,7 +38,7 @@ RSpec.describe CodecovApi::Objects::FolderTotals do
   end
 
   it 'should have a misses' do
-    expect(subject.misses).to eq(528_6)
+    expect(subject.misses).to eq(5_286)
   end
 
   it 'should have a coverage' do
