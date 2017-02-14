@@ -51,12 +51,11 @@ RSpec.describe CodecovApi::Api::Commits do
 
   describe '#folder_totals' do
     it 'should request a folder with master as default branch' do
-      path = 'some_folder_path'
       allow(subject)
         .to receive(:get_response)
-        .with("#{base_url}/tree/master/#{path}")
+        .with("#{base_url}/tree/master/some_folder_path")
         .and_return(json)
-      expect(subject.folder_totals(path)).to eq(json)
+      expect(subject.folder_totals('some_folder_path')).to eq(json)
     end
   end
 
