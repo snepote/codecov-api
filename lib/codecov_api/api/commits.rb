@@ -11,7 +11,12 @@ module CodecovApi
       def list(from = nil, to = nil)
         uri = '/commits'
         params = {from: from, to: to}.map do |key, value|
-          "#{key}=#{value.utc.strftime('%F %T')}" if value.instance_of?(Time)
+          if value.instance_of?(Time) then
+            "#{key}=#{value.utc.strftime('%F %T')}"
+          elsif !(value.nil?)
+           raise 'not a valid time'
+         end
+
         end.compact
         uri = "#{uri}/?#{params.join('&')}" unless params.empty?
         get_request(uri)

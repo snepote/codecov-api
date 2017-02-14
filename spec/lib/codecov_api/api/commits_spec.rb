@@ -41,12 +41,12 @@ RSpec.describe CodecovApi::Api::Commits do
       expect(subject.list(from, to)).to eq(json)
     end
 
-    it 'should ignore non valid Time params' do
+    it 'should raise an error for non valid Time params' do
       allow(subject)
         .to receive(:response)
         .with("#{base_url}/commits/?from=2016-08-18 15:32:25")
         .and_return(json)
-      expect(subject.list(from, 'non_valid_time')).to eq(json)
+      expect { subject.list(from, 'non_valid_time') }.to raise_error 'not a valid time'
     end
   end
 
