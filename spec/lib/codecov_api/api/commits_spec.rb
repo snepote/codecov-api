@@ -12,8 +12,8 @@ RSpec.describe CodecovApi::Api::Commits do
   end
 
   let(:sha) { 'da39a3ee5e6b4b0d3255bfef95601890afd80709' }
-  let(:from) { Time.new(2016, 8, 18, 17, 32, 25) }
-  let(:to) { Time.new(2017, 01, 14, 10, 00, 00) }
+  let(:from) { Time.new(2016, 8, 18, 17, 32, 25).utc }
+  let(:to) { Time.new(2017, 01, 14, 10, 00, 00).utc }
 
   before(:example) do
     allow(ENV).to receive(:[]).with('CODECOV_AUTH_TOKEN').and_return('some_valid_auth_token')
@@ -36,17 +36,18 @@ RSpec.describe CodecovApi::Api::Commits do
     it 'should include params in the URL when filtering commits by date range' do
       allow(subject)
         .to receive(:response)
-        .with("#{base_url}/commits/?from=2016-08-18 15:32:25&to=2017-01-14 09:00:00")
+        .with("#{base_url}/commits/?from=#{from.utc.strftime('%F %T')}" \
+          "&to=#{to.utc.strftime('%F %T')}")
         .and_return(json)
-      expect(subject.list(from.utc, to.utc)).to eq(json)
+      expect(subject.list(from, to)).to eq(json)
     end
 
     it 'should raise an error for non valid Time params' do
       allow(subject)
         .to receive(:response)
-        .with("#{base_url}/commits/?from=2016-08-18 15:32:25")
+        .with("#{base_url}/commits/?from=#{from.utc.strftime('%F %T')}")
         .and_return(json)
-      expect { subject.list(from.utc, 'non_valid_time') }.to raise_error 'not a valid time'
+      expect { subject.list(from, 'non_valid_time') }.to raise_error 'not a valid time'
     end
   end
 
