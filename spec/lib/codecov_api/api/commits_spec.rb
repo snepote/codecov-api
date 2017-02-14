@@ -59,5 +59,4 @@ RSpec.describe CodecovApi::Api::Commits do
       expect(subject.folder_totals('some_folder_path')).to eq(json)
     end
   end
-
 end
