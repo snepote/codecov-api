@@ -10,10 +10,10 @@ module CodecovApi
 
       def list(from = nil, to = nil)
         uri = '/commits'
-        params = {from: from, to: to}.map do |key, value|
-          if value.instance_of?(Time) then
+        params = { from: from, to: to }.map do |key, value|
+          if value.instance_of?(Time)
             "#{key}=#{value.utc.strftime('%F %T')}"
-          elsif !(value.nil?)
+          elsif !value.nil?
             raise 'not a valid time'
           end
         end.compact
@@ -29,7 +29,7 @@ module CodecovApi
         get_request("/tree/#{branch}/#{path}")
       end
 
-    protected
+      protected
 
       def base_path
         "/#{@owner}/#{@repo}"

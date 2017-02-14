@@ -30,11 +30,11 @@ RSpec.describe CodecovApi::Objects::FolderTotals do
   end
 
   it 'should have a lines' do
-    expect(subject.lines).to eq(102_74)
+    expect(subject.lines).to eq(10_274)
   end
 
   it 'should have a hits' do
-    expect(subject.hits).to eq(4988)
+    expect(subject.hits).to eq(4_988)
   end
 
   it 'should have a misses' do
