@@ -11,7 +11,8 @@ RSpec.describe CodecovApi::Api::Base do
     expect { subject.send(:get_request, 'some/path') }.to raise_error 'base_path method not defined'
   end
 
-  it 'should raise an exception when ENV CODECOV_AUTH_TOKEN is not defined' do
+  it 'should raise an exception when ENV CODECOV_AUTH_TOKEN is not defined :unless',
+    :unless => ENV['CODECOV_AUTH_TOKEN'] do
     expect { subject.send(:auth_token) }.to raise_error 'CODECOV_AUTH_TOKEN ENV VAR not defined'
   end
 
