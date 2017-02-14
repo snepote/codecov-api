@@ -8,4 +8,5 @@ gem 'json',         '~> 1.8', '>= 1.8.3'
 group :test do
   gem 'rspec',      '~> 3.5'
   gem 'rake',       '~> 11.1', '>= 11.1.2'
+  gem 'rubocop',    '~> 0.47.1'
 end
