@@ -9,8 +9,12 @@ module CodecovApi
       end
 
       def list(from = nil, to = nil)
-        # todo: add from and to parameters
-        get_request('/commits')
+        uri = '/commits'
+        params = {from: from, to: to}.map do |key, value|
+          "#{key}=#{value.utc.strftime('%F %T')}" if value.instance_of?(Time)
+        end.compact
+        uri = "#{uri}/?#{params.join('&')}" unless params.empty?
+        get_request(uri)
       end
 
       def get(sha)
