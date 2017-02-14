@@ -12,7 +12,7 @@ RSpec.describe CodecovApi::Api::Base do
   end
 
   it 'should raise an exception when ENV CODECOV_AUTH_TOKEN is not defined :unless',
-    :unless => ENV['CODECOV_AUTH_TOKEN'] do
+  unless: ENV['CODECOV_AUTH_TOKEN'] do
     expect { subject.send(:auth_token) }.to raise_error 'CODECOV_AUTH_TOKEN ENV VAR not defined'
   end
 
