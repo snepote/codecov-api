@@ -13,7 +13,7 @@ RSpec.describe CodecovApi::Api::Commits do
 
   let(:sha) { 'da39a3ee5e6b4b0d3255bfef95601890afd80709' }
   let(:from) { Time.new(2016, 8, 18, 17, 32, 25).utc }
-  let(:to) { Time.new(2017, 01, 14, 10, 00, 00).utc }
+  let(:to) { Time.new(2017, 0o1, 14, 10, 0o0, 0o0).utc }
 
   before(:example) do
     allow(ENV).to receive(:[]).with('CODECOV_AUTH_TOKEN').and_return('some_valid_auth_token')

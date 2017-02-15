@@ -20,7 +20,7 @@ module CodecovApi
         raise 'delete method not implemented'
       end
 
-    protected
+      protected
 
       def base_path
         "/#{@owner}/#{@repo}"

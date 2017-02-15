@@ -4,8 +4,7 @@ require 'json'
 module CodecovApi
   module Api
     class Base
-
-    protected
+      protected
 
       def get_request(path)
         response(base_url + base_path + path)
@@ -15,7 +14,8 @@ module CodecovApi
         raise 'base_path method not defined'
       end
 
-    private
+      private
+
       def auth_token
         raise 'CODECOV_AUTH_TOKEN ENV VAR not defined' if ENV['CODECOV_AUTH_TOKEN'].nil?
         ENV['CODECOV_AUTH_TOKEN']
@@ -30,7 +30,7 @@ module CodecovApi
         RestClient::Request.new(
           method: method,
           url: url,
-          headers: { :Authorization => 'token ' + auth_token }
+          headers: { Authorization: 'token ' + auth_token }
         ).execute
       end
     end
