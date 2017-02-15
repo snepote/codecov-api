@@ -2,7 +2,7 @@ require File.expand_path('../lib/codecov_api/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name         = 'codecov_api'
-  s.date         = '2017-02-08'
+  s.date         = Time.now.strftime('%F')
   s.version      = CodecovApi::VERSION
   s.platform     = Gem::Platform::RUBY
   s.authors      = ['Sebastian Nepote']
