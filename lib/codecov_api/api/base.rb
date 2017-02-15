@@ -26,6 +26,7 @@ module CodecovApi
       end
 
       def response(url, method: :get)
+        url = URI.escape(url)
         puts "#{method.to_s.upcase} #{url}"
         RestClient::Request.new(
           method: method,
