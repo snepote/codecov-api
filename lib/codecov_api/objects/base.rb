@@ -19,9 +19,13 @@ module CodecovApi
 
       private
 
-      def method_missing(method, *args, &block)
-        super unless valid_methods.include? method
-        root_element[method.to_s]
+      def method_missing(method_name, *arguments, &block)
+        super unless valid_methods.include? method_name
+        root_element[method_name.to_s]
+      end
+    
+      def respond_to_missing?(method_name, include_private = false)
+        valid_methods.include? method_name || super
       end
     end
   end
