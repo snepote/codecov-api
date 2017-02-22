@@ -23,7 +23,7 @@ module CodecovApi
         super unless valid_methods.include? method_name
         root_element[method_name.to_s]
       end
-    
+
       def respond_to_missing?(method_name, include_private = false)
         valid_methods.include? method_name || super
       end

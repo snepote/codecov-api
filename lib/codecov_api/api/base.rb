@@ -31,7 +31,7 @@ module CodecovApi
         RestClient::Request.new(
           method: method,
           url: url,
-          headers: { Authorization: 'token ' + auth_token }
+          headers: { Authorization: 'token ' + auth_token },
         ).execute
       end
     end

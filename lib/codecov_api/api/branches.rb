@@ -17,6 +17,7 @@ module CodecovApi
       end
 
       def delete(branch)
+        puts "#{branch} should be deleted but..."
         raise 'delete method not implemented'
       end
 
