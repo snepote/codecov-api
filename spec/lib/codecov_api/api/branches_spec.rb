@@ -12,19 +12,19 @@ RSpec.describe CodecovApi::Api::Branches do
   end
 
   before(:example) do
-    allow(ENV).to receive(:[]).with('CODECOV_AUTH_TOKEN').and_return('some_valid_auth_token')
+    allow(subject).to receive(:auth_token).and_return('some_valid_auth_token')
   end
 
   describe '#list' do
     it 'should request a valid url' do
-      allow(subject).to receive(:response).with("#{base_url}/branches").and_return(json)
-      expect(subject.list).to eq(json)
+      stub_request(:get, "#{base_url}/branches").to_return(body: json)
+      expect(subject.list).to eq json
     end
   end
 
   describe '#branch' do
     it 'should request a valid url' do
-      allow(subject).to receive(:response).with("#{base_url}/branch/some_branch").and_return(json)
+      stub_request(:get, "#{base_url}/branch/some_branch").to_return(body: json)
       expect(subject.get('some_branch')).to eq(json)
     end
   end

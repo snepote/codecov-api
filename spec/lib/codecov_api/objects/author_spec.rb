@@ -6,11 +6,8 @@ RSpec.describe CodecovApi::Objects::Author do
   subject do
     CodecovApi::Objects::Author.new('{
       "author": {
-        "service": "github",
-        "name": "Gafsi",
-        "email": "hello@codecov.io",
-        "username": "codecov",
-        "service_id": "12345"
+        "service": "github", "name": "Gafsi", "email": "hello@codecov.io",
+        "username": "codecov", "service_id": "12345"
       }
     }')
   end
