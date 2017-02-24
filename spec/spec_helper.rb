@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'webmock/rspec'.freeze
+require 'webmock/rspec'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
