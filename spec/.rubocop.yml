@@ -1,5 +1,7 @@
-inherit_from:
-  - ../.rubocop.yml
-  
-Metric/BlockLength:
-   Enabled: False
+  inherit_from: ../.rubocop.yml
+
+  Metrics/BlockLength:
+    Enabled: False
+
+  Style/AlignParameters:
+    Enabled: False
